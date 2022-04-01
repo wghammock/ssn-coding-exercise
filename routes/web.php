@@ -17,4 +17,4 @@ Route::get('/', function () {
     return view('prime-time');
 });
 
-Route::post('/request', 'PrimeChecker@request');
+Route::post('/request', 'PrimeController@request') -> name('generate-primes');  
