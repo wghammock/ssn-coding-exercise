@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\PrimeController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,4 +19,4 @@ Route::get('/', function () {
     return view('prime-time');
 });
 
-Route::post('/request', 'PrimeController@request') -> name('generate-primes');  
+Route::post('/request', [PrimeController::class, 'request']) -> name('generate-primes');
