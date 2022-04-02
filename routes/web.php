@@ -17,6 +17,6 @@ use App\Http\Controllers\PrimeController;
 
 Route::get('/', function () {
     return view('prime-time');
-});
+}) -> name('home');
 
 Route::post('/request', [PrimeController::class, 'request']) -> name('generate-primes');
