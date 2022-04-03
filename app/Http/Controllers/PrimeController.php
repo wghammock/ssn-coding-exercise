@@ -56,8 +56,15 @@ class PrimeController extends Controller
 
                 foreach ($levelOneArray as $lvlOneNum) {
                     $lvlOneFormatted = sprintf('%03d', $lvlOneNum);
-                    $ssnFormatted = $lvlOneFormatted + $lvlTwoNumFormatted + $lvlThreeNumFormatted;
-                    if($this->primeCheck(intval($ssnFormatted))) $finalArray[] = $ssnFormatted;
+                    $ssnFormatted = $lvlOneFormatted . $lvlTwoNumFormatted . $lvlThreeNumFormatted;
+                    $ssnIntVal = intval($ssnFormatted);
+
+                    //  echo $ssnFormatted;
+                    //  echo "-";
+                    //  echo $ssnIntVal;
+                    //  echo "<br><br>";
+
+                    if($this->primeCheck($ssnIntVal)) $finalArray[] = $ssnFormatted;
                 }
 
             }
